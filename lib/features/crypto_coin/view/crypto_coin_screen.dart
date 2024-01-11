@@ -30,7 +30,7 @@ class _CryptoCoinScreenState extends State<CryptoCoinScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(coinName ?? '...'),)
+        appBar: AppBar(title: Text(coinName ?? 'Coming soon'),)
     );
   }
 }
