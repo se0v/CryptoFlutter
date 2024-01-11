@@ -3,9 +3,15 @@ import 'package:fluttapp/repositories/crypto_coins/abstract_coins_repository.dar
 import 'package:fluttapp/repositories/crypto_coins/models/crypto_coin.dart';
 
 class CryptoCoinsRepository implements AbstractCoinsRepository {
+
+  CryptoCoinsRepository({
+    required this.dio
+  });
+  final Dio dio;
+
   @override
   Future<List<CryptoCoin>> getCoinsList() async {
-    final response = await Dio().get(
+    final response = await dio.get(
         'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,BNB,AVAX,TONCOIN,CAG,DOV&tsyms=USD');
 
     final data = response.data as Map<String, dynamic>;
