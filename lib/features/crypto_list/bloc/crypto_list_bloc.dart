@@ -67,7 +67,7 @@ class CryptoListLoadingFailure extends CryptoListState{
 }
 
 //crypto_list_event.dart
-abstract class CryptoListEvent {
+abstract class CryptoListEvent extends Equatable {
 
 }
 
@@ -77,5 +77,8 @@ class LoadCryptoList extends CryptoListEvent {
   });
 
   final Completer? completer;
+
+  @override
+  List<Object?> get props => [completer];
 }
 
